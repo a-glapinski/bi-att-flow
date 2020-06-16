@@ -95,7 +95,7 @@ def _train(config):
 
     # Begin training
     num_steps = config.num_steps or int(math.ceil(train_data.num_examples / (config.batch_size * config.num_gpus))) * config.num_epochs
-    global_step = 0
+    global_step = config.load_step
     for batches in tqdm(train_data.get_multi_batches(config.batch_size, config.num_gpus,
                                                      num_steps=num_steps, shuffle=True, cluster=config.cluster), total=num_steps):
         global_step = sess.run(model.global_step) + 1  # +1 because all calculations are done after step
