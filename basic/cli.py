@@ -115,6 +115,7 @@ flags.DEFINE_bool("dynamic_att", False, "Dynamic attention [False]")
 
 # Custom flags
 flags.DEFINE_integer("emb_mat", 0, "embedding matrix")
+flags.DEFINE_integer("new_emb_mat", 0, "new_emb_mat")
 
 
 def main(_):
